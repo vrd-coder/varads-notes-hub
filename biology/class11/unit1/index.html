@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unit I: Diversity in the Living World - Chapters - Varad's Notes Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #6b7280;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:focus,
+    div[role="link"]:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 3px;
+      outline-radius: 0.75rem;
+      outline-style: solid;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 0.06);
+      z-index: 1000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      height: 60px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #111827;
+      user-select: none;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+    main {
+      max-width: 900px;
+      margin: 4rem auto 5rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    h1.page-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 3rem;
+      user-select: text;
+      line-height: 1.1;
+    }
+    .chapter-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding: 0 1rem;
+    }
+    .chapter-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      padding: 3rem 2rem;
+      box-shadow: 0 1.5px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      text-align: center;
+    }
+    .chapter-card:hover,
+    .chapter-card:focus-visible {
+      box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .chapter-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+      stroke: #2563eb;
+      stroke-width: 1.7;
+      fill: none;
+      user-select: none;
+    }
+    .chapter-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+      user-select: text;
+      line-height: 1.3;
+      padding: 0 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      user-select: none;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 6rem;
+    }
+    @media (max-width: 480px) {
+      h1.page-title {
+        font-size: 2rem;
+      }
+      .chapter-list {
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header role="banner">
+  <div class="container">
+    <nav role="navigation" aria-label="Primary navigation">
+      <div class="logo" tabindex="0" role="link" onclick="location.href='../index.html'" onkeypress="if(event.key==='Enter') location.href='../index.html'">
+        Varad's Notes Hub
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <h1 class="page-title" tabindex="0">Unit I: Diversity in the Living World</h1>
+  <section class="chapter-list" aria-label="Chapters List">
+
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter1.html'" onkeypress="if(event.key==='Enter') location.href='chapter1.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true" aria-label="The Living World icon" role="img">
+        <path d="M12 2L2 7l5 4V19l5 2 5-2V11l5-4-10-5z" stroke-linejoin="round" stroke-linecap="round"></path>
+      </svg>
+      <div class="chapter-title">1. The Living World</div>
+    </article>
+
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter2.html'" onkeypress="if(event.key==='Enter') location.href='chapter2.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true"
+        aria-label="Biological Classification icon" role="img">
+        <circle cx="12" cy="12" r="7" />
+        <line x1="12" y1="5" x2="12" y2="19" />
+      </svg>
+      <div class="chapter-title">2. Biological Classification</div>
+    </article>
+
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter3.html'" onkeypress="if(event.key==='Enter') location.href='chapter3.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true" aria-label="Plant Kingdom icon" role="img">
+        <path d="M6 4l12 8-6 8L6 4z" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div class="chapter-title">3. Plant Kingdom</div>
+    </article>
+
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter4.html'" onkeypress="if(event.key==='Enter') location.href='chapter4.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true" aria-label="Animal Kingdom icon" role="img">
+        <path d="M12 7a2 2 0 1 1 0-4a2 2 0 0 1 0 4zm5 5a2 2 0 1 1 0-4a2 2 0 0 1 0 4zm-10 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4zm5 7a3 3 0 1 1 0-6a3 3 0 0 1 0 6z" />
+      </svg>
+      <div class="chapter-title">4. Animal Kingdom</div>
+    </article>
+
+  </section>
+</main>
+<footer role="contentinfo" aria-label="Site footer">
+  &copy; 2024 Varad's Notes Hub
+</footer>
+</body>
+</html>
