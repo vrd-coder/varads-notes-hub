@@ -1,208 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Varad's Notes Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    /* CSS Variables for Theming and Scale */
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #374151;
+      --color-text-muted: #6b7280;
+      --color-primary: #111827;
+      --color-primary-hover: #2563eb;
+      --color-accent: #2563eb;
+      --radius-base: 0.75rem;
+      --shadow-light: 0 1.5px 6px rgba(0,0,0,0.07);
+      --shadow-hover: 0 12px 30px rgba(37, 99, 235, 0.3);
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    }
+
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #6b7280;
-      line-height: 1.6;
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-size: 18px;
+      line-height: 1.68;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      -webkit-font-feature-settings: "kern";
+      font-feature-settings: "kern";
     }
+
     a {
       color: inherit;
       text-decoration: none;
     }
-    a:focus,
-    button:focus,
-    div[role="link"]:focus {
-      outline: 2px solid #111827;
+    a:focus-visible,
+    button:focus-visible,
+    div[role="link"]:focus-visible {
       outline-offset: 3px;
+      outline-color: var(--color-primary-hover);
+      outline-style: solid;
+      outline-width: 3px;
+      outline-radius: 8px;
     }
+    a:hover,
+    button:hover,
+    div[role="link"]:hover {
+      cursor: pointer;
+    }
+
+    /* Layout containers */
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    /* Header */
     header {
       position: sticky;
       top: 0;
-      background: #fff;
+      width: 100%;
+      background: var(--color-bg);
       border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
-      z-index: 10;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 0.08);
+      z-index: 1000;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+
     nav {
-      height: 60px;
+      height: 64px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
+
     .logo {
       font-weight: 800;
-      font-size: 1.5rem;
-      color: #111827;
+      font-size: 1.75rem;
+      color: var(--color-primary);
       user-select: none;
-      letter-spacing: 0.07em;
-      cursor: default;
-      padding: 0.5rem 0;
+      letter-spacing: 0.12em;
+      user-select: none;
+      user-drag: none;
+      user-select: none;
+      -webkit-user-select:none;
+      -webkit-touch-callout:none;
+      -webkit-user-drag:none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 1rem 5rem;
-      text-align: center;
-    }
-    h1.hero-title {
-      font-size: 3.5rem;
+
+    .logo span {
       font-weight: 800;
-      color: #111827;
-      margin: 0 0 0.5rem 0;
-      line-height: 1.1;
+      font-size: 1.75rem;
+      color: var(--color-primary);
+      user-select: text;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
     }
-    p.hero-subtitle {
-      font-size: 1.125rem;
+
+    /* Navigation links */
+    .nav-links {
+      display: flex;
+      gap: 28px;
       font-weight: 600;
-      color: #6b7280;
-      margin: 0 0 2.5rem 0;
-      max-width: 600px;
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      user-select: none;
+    }
+
+    .nav-link {
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-base);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background-color: var(--color-primary-hover);
+      color: white;
+      outline: none;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    main {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      text-align: center;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    h1.hero-title {
+      font-size: clamp(3.6rem, 7vw, 5rem);
+      font-weight: 800;
+      color: var(--color-primary);
+      margin: 0 0 0.75rem 0;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      user-select: text;
+      text-rendering: optimizeLegibility;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    h1.hero-title span {
+      display: inline-block;
+      padding: 0 0.6rem;
+      border-radius: 0.5rem;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: white;
+      user-select: text;
+      font-weight: 800;
+      box-shadow:
+        0 4px 20px rgb(37 99 235 / 0.5);
+    }
+
+    p.hero-subtitle {
+      font-weight: 600;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: var(--color-text-muted);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3.5rem;
+      user-select: text;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.125rem;
+      padding: 1.05rem 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgb(17 24 39 / 0.48);
+      border: none;
+      cursor: pointer;
+      transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      letter-spacing: 0.1em;
+      box-sizing: border-box;
+      will-change: transform, background-color, box-shadow;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background-color: var(--color-primary-hover);
+      box-shadow: 0 12px 36px rgba(37, 99, 235, 0.58);
+      transform: scale(1.07);
+      outline: none;
+      text-decoration: none;
+    }
+
+    /* Subjects Section */
+    section.subjects {
+      margin-top: 6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      padding: 0 1rem;
+      max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
     }
-    .btn-primary {
-      display: inline-block;
-      background-color: #111827;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.75rem 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 14px rgb(17 24 39 / 0.5);
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      user-select: none;
-    }
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      background-color: #2563eb;
-      transform: scale(1.05);
-      text-decoration: none;
-    }
-    section.subjects {
-      margin-top: 5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 2rem;
-      padding: 0 1rem;
-    }
+
     .card {
-      background: #fff;
-      border-radius: 0.75rem;
-      padding: 2rem;
-      box-shadow: 0 1.5px 8px rgba(0, 0, 0, 0.1);
+      background: var(--color-bg);
+      border-radius: var(--radius-base);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-light);
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1);
       user-select: none;
+      will-change: transform, box-shadow;
+      border: 1px solid transparent;
     }
+
     .card:hover,
     .card:focus-visible {
-      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-8px);
       outline: none;
+      border: 1px solid var(--color-primary-hover);
     }
+
     .card-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 1.25rem;
-      stroke: #2563eb;
-      stroke-width: 1.5;
+      width: 80px;
+      height: 80px;
+      stroke: var(--color-accent);
+      stroke-width: 1.8;
       fill: none;
-    }
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 0.5rem;
-      user-select: text;
-    }
-    .card-description {
-      font-size: 1rem;
-      color: #6b7280;
-      user-select: text;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.875rem;
-      color: #9ca3af;
+      margin-bottom: 2rem;
+      flex-shrink: 0;
       user-select: none;
-      border-top: 1px solid #e5e7eb;
-      margin-top: 6rem;
+      pointer-events: none;
+      transition: stroke 0.3s ease;
     }
-    @media (max-width: 480px) {
+
+    .card-title {
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+      user-select: text;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    .card-description {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      user-select: text;
+      max-width: 360px;
+      line-height: 1.5;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+      }
+      .nav-links {
+        display: none;
+      }
+      main {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
       h1.hero-title {
-        font-size: 2.25rem;
+        justify-content: center;
+      }
+      h1.hero-title span {
+        padding: 0 0.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <header role="banner">
+  <header role="banner" aria-label="Primary header">
     <div class="container">
       <nav role="navigation" aria-label="Primary navigation">
-        <div class="logo" tabindex="0">Varad's Notes Hub</div>
+        <div class="logo" tabindex="0" aria-current="page">
+          <span>Varad's</span> <span>Notes</span> <span>Hub</span>
+        </div>
+        <div class="nav-links" aria-label="Site navigation">
+          <a href="#subjects" class="nav-link" tabindex="0">Explore Subjects</a>
+        </div>
       </nav>
     </div>
   </header>
+
   <main>
-    <h1 class="hero-title" tabindex="0">Welcome to Varad's Notes Hub</h1>
-    <p class="hero-subtitle" tabindex="0">Your go-to place for NEET Physics, Chemistry, and Biology notes — organized and easy to access.</p>
-    <a href="#subjects" class="btn-primary" role="button">Get Started</a>
+    <h1 class="hero-title" tabindex="0">
+      Welcome to <span>Varad's</span> <span>Notes</span> <span>Hub</span>
+    </h1>
+    <p class="hero-subtitle" tabindex="0">
+      Your trusted source for organized and detailed NEET notes in Biology, Physics, and Chemistry.
+    </p>
+    <button class="btn-primary" role="button" aria-label="Get started exploring subjects" onclick="document.getElementById('subjects').scrollIntoView({ behavior: 'smooth' })" tabindex="0">
+      Get Started
+    </button>
 
     <section id="subjects" class="subjects" aria-label="Subjects">
-      <article class="card" tabindex="0" role="link" onclick="location.href='biology/index.html'" onkeypress="if(event.key==='Enter') location.href='biology/index.html'">
-        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2C8 2 5 5 5 9c0 4 7 11 7 11s7-7 7-11c0-4-3-7-7-7Z" stroke-linejoin="round" stroke-linecap="round"/>
+      <article
+        class="card"
+        tabindex="0"
+        role="link"
+        aria-describedby="bio-desc"
+        onclick="location.href='biology/index.html'"
+        onkeypress="if(event.key === 'Enter') location.href='biology/index.html'">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2C8 2 5 5 5 9c0 4 7 11 7 11s7-7 7-11c0-4-3-7-7-7Z" stroke-linejoin="round" stroke-linecap="round" />
           <circle cx="12" cy="9" r="2" />
         </svg>
-        <h2 class="card-title">Biology</h2>
+        <h2 class="card-title" id="bio-desc">Biology</h2>
         <p class="card-description">Explore detailed notes for Class 11 and 12 Biology.</p>
       </article>
 
-      <article class="card" tabindex="0" role="link" onclick="location.href='physics/index.html'" onkeypress="if(event.key==='Enter') location.href='physics/index.html'">
-        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="5" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M2 12h20" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M12 2v20" stroke-linejoin="round" stroke-linecap="round"/>
+      <article
+        class="card"
+        tabindex="0"
+        role="link"
+        aria-describedby="phys-desc"
+        onclick="location.href='physics/index.html'"
+        onkeypress="if(event.key === 'Enter') location.href='physics/index.html'">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="M2 12h20" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="M12 2v20" stroke-linejoin="round" stroke-linecap="round" />
         </svg>
-        <h2 class="card-title">Physics</h2>
+        <h2 class="card-title" id="phys-desc">Physics</h2>
         <p class="card-description">Comprehensive Class 11 and 12 Physics notes for NEET.</p>
       </article>
 
-      <article class="card" tabindex="0" role="link" onclick="location.href='chemistry/index.html'" onkeypress="if(event.key==='Enter') location.href='chemistry/index.html'">
-        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="7" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M19 12v5a7 7 0 0 1-14 0v-5" stroke-linejoin="round" stroke-linecap="round"/>
+      <article
+        class="card"
+        tabindex="0"
+        role="link"
+        aria-describedby="chem-desc"
+        onclick="location.href='chemistry/index.html'"
+        onkeypress="if(event.key === 'Enter') location.href='chemistry/index.html'">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="7" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="M19 12v5a7 7 0 0 1-14 0v-5" stroke-linejoin="round" stroke-linecap="round" />
         </svg>
-        <h2 class="card-title">Chemistry</h2>
+        <h2 class="card-title" id="chem-desc">Chemistry</h2>
         <p class="card-description">Well-structured Class 11 and 12 Chemistry notes.</p>
       </article>
     </section>
   </main>
-  <footer role="contentinfo">
+
+  <footer role="contentinfo" aria-label="Site footer">
     &copy; 2024 Varad's Notes Hub
   </footer>
 </body>
 </html>
+
