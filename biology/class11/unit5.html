@@ -1,169 +1,208 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Unit V - Human Physiology | Class 11 Biology - Varad's Notes Hub</title>
+  <title>Unit V: Human Physiology - Varad's Notes Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #6b7280;
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:focus, div[role="link"]:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: 3px;
-  outline-radius: 0.75rem;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.06);
-  z-index: 1000;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  height: 60px;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #111827;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-}
-
-main {
-  max-width: 900px;
-  margin: 4rem auto 5rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-h1.page-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 2.5rem;
-}
-
-.chapter-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  padding: 0 1rem;
-}
-
-.chapter-card {
-  background: #fff;
-  border-radius: 0.75rem;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.chapter-card:hover,
-.chapter-card:focus-visible {
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-  transform: translateY(-8px);
-  outline: none;
-}
-
-.chapter-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #111827;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.875rem;
-  color: #9ca3af;
-  border-top: 1px solid #e5e7eb;
-  margin-top: 6rem;
-}
-
+    *, *::before, *::after {box-sizing: border-box;}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #6b7280;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:focus, div[role="link"]:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    nav {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #111827;
+      user-select: none;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      padding: 0.5rem 0;
+    }
+    main {
+      padding: 4rem 1rem 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1.page-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+      user-select: text;
+    }
+    .chapter-list {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      padding: 0 1rem;
+    }
+    .chapter-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 1.5px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      text-align: center;
+    }
+    .chapter-card:hover,
+    .chapter-card:focus-visible {
+      box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .chapter-icon {
+      width: 60px;
+      height: 60px;
+      stroke: #2563eb;
+      stroke-width: 1.7;
+      fill: none;
+      margin-bottom: 1.25rem;
+      user-select: none;
+    }
+    .chapter-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      user-select: text;
+      line-height: 1.3;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      user-select: none;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 6rem;
+    }
+    @media (max-width: 480px) {
+      h1.page-title {
+        font-size: 2rem;
+      }
+    }
   </style>
-</head><body>
-  <header role="banner">
-    <div class="container">
-      <nav role="navigation" aria-label="Primary navigation">
-        <div class="logo" tabindex="0" role="link" onclick="location.href='../index.html'"
-          onkeypress="if(event.key==='Enter') location.href='../index.html'">
-          Varad's Notes Hub
-        </div>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <h1 class="page-title" tabindex="0">Unit V: Human Physiology</h1>
-    <section class="chapter-list" aria-label="Chapters in Human Physiology"><div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/digestion.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/digestion.html'">
-    <div class="chapter-title">1. Digestion and Absorption</div>
+</head>
+<body>
+<header role="banner">
+  <div class="container">
+    <nav role="navigation" aria-label="Primary navigation">
+      <div class="logo" tabindex="0" role="link" onclick="location.href='../index.html'" onkeypress="if(event.key==='Enter')location.href='../index.html'">
+        Varad's Notes Hub
+      </div>
+    </nav>
   </div>
+</header>
+<main>
+  <h1 class="page-title" tabindex="0">Unit V: Human Physiology Chapters</h1>
+  <section class="chapter-list" aria-label="Chapters List">
 
-  <div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/breathing.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/breathing.html'">
-    <div class="chapter-title">2. Breathing and Exchange of Gases</div>
-  </div>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter1.html'" onkeypress="if(event.key==='Enter')location.href='chapter1.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+        <line x1="4" y1="8" x2="20" y2="8"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+      </svg>
+      <div class="chapter-title">1. Digestion and Absorption</div>
+    </article>
 
-  <div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/bodyfluids.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/bodyfluids.html'">
-    <div class="chapter-title">3. Body Fluids and Circulation</div>
-  </div>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter2.html'" onkeypress="if(event.key==='Enter')location.href='chapter2.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+      <div class="chapter-title">2. Breathing and Exchange of Gases</div>
+    </article>
 
-  <div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/excretory.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/excretory.html'">
-    <div class="chapter-title">4. Excretory Products and their Elimination</div>
-  </div>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter3.html'" onkeypress="if(event.key==='Enter')location.href='chapter3.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="5" y="4" width="14" height="16" rx="3" ry="3"/>
+        <line x1="5" y1="10" x2="19" y2="10"/>
+        <line x1="5" y1="14" x2="19" y2="14"/>
+      </svg>
+      <div class="chapter-title">3. Body Fluids and Circulation</div>
+    </article>
 
-  <div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/movement.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/movement.html'">
-    <div class="chapter-title">5. Locomotion and Movement</div>
-  </div>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter4.html'" onkeypress="if(event.key==='Enter')location.href='chapter4.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <line x1="12" y1="4" x2="12" y2="20"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+      </svg>
+      <div class="chapter-title">4. Excretory Products and Their Elimination</div>
+    </article>
 
-  <div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/nervous.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/nervous.html'">
-    <div class="chapter-title">6. Neural Control and Coordination</div>
-  </div>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter5.html'" onkeypress="if(event.key==='Enter')location.href='chapter5.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="6" y="4" width="12" height="16" rx="4" ry="4"/>
+        <line x1="6" y1="12" x2="18" y2="12"/>
+      </svg>
+      <div class="chapter-title">5. Locomotion and Movement</div>
+    </article>
 
-  <div class="chapter-card" tabindex="0" role="link" onclick="location.href='chapters/endocrine.html'"
-    onkeypress="if(event.key==='Enter') location.href='chapters/endocrine.html'">
-    <div class="chapter-title">7. Chemical Coordination and Integration</div>
-  </div>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter6.html'" onkeypress="if(event.key==='Enter')location.href='chapter6.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <line x1="6" y1="12" x2="18" y2="12"/>
+        <line x1="12" y1="6" x2="12" y2="18"/>
+      </svg>
+      <div class="chapter-title">6. Neural Control and Coordination</div>
+    </article>
 
-</section>
+    <article class="chapter-card" tabindex="0" role="link" onclick="location.href='chapter7.html'" onkeypress="if(event.key==='Enter')location.href='chapter7.html'">
+      <svg class="chapter-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="4" y1="12" x2="20" y2="12"/>
+      </svg>
+      <div class="chapter-title">7. Chemical Coordination and Integration</div>
+    </article>
 
-  </main>
-  <footer role="contentinfo">
-    &copy; 2024 Varad's Notes Hub
-  </footer>
-</body></html>
+  </section>
+</main>
+<footer role="contentinfo">
+  &copy; 2024 Varad's Notes Hub
+</footer>
+</body>
+</html>
