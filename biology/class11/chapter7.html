@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 7: Locomotion and Movement - Varad's Notes Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {box-sizing: border-box;}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #6b7280;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    nav {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #111827;
+      user-select: none;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      padding: 0.5rem 0;
+    }
+    main {
+      padding: 4rem 1rem 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    h1.page-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+      user-select: text;
+    }
+    section.note {
+      margin-bottom: 2rem;
+      border-left: 4px solid #2563eb;
+      padding-left: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 1.5rem 0;
+      color: #2563eb;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      user-select: none;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 6rem;
+    }
+  </style>
+</head>
+<body>
+<header role="banner">
+  <div class="container">
+    <nav role="navigation" aria-label="Primary navigation">
+      <div class="logo" tabindex="0" role="link" onclick="location.href='../index.html'" onkeypress="if(event.key==='Enter')location.href='../index.html'">
+        Varad's Notes Hub
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <h1 class="page-title" tabindex="0">Chapter 7: Locomotion and Movement</h1>
+
+  <section class="note">
+    <h2>🔰 Introduction</h2>
+    <p>Movement = A fundamental property of living organisms.</p>
+    <p>It includes internal movements (heartbeat, cytoplasmic streaming) and external movements (limb motion).</p>
+    <p>Locomotion = Movement resulting in change of place (e.g., walking, flying).</p>
+    <p>✅ All locomotions are movements, but not all movements are locomotion.</p>
+    <p>Examples:</p>
+    <ul>
+      <li>WBC moving = Movement only</li>
+      <li>Man walking = Movement + Locomotion</li>
+    </ul>
+    <p>Purpose:</p>
+    <ul>
+      <li>🔹 Food</li>
+      <li>🔹 Shelter</li>
+      <li>🔹 Mating</li>
+      <li>🔹 Escape from enemies</li>
+      <li>🔹 Adaptation</li>
+    </ul>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.1 Types of Movement</h2>
+    <ol>
+      <li>🧬 Amoeboid Movement
+        <ul>
+          <li>Seen in: WBCs, macrophages, Amoeba</li>
+          <li>Uses pseudopodia (false feet)</li>
+        </ul>
+      </li>
+      <li>🧹 Ciliary Movement
+        <ul>
+          <li>Seen in: Trachea (respiratory tract), oviduct</li>
+          <li>Moves mucus, ovum, etc.</li>
+        </ul>
+      </li>
+      <li>💪 Muscular Movement
+        <ul>
+          <li>Most common in higher animals</li>
+          <li>Movement via contraction of muscles</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.2 Muscles</h2>
+    <p>Muscles form ~40–50% of body weight.</p>
+    <p>Function: Movement, support, posture.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type of Muscle</th>
+          <th>Control</th>
+          <th>Striated</th>
+          <th>Shape</th>
+          <th>Nucleus</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🏋️‍♂️ Skeletal</td>
+          <td>Voluntary</td>
+          <td>Yes</td>
+          <td>Cylindrical</td>
+          <td>Multinucleated</td>
+          <td>Attached to bones</td>
+        </tr>
+        <tr>
+          <td>🫀 Visceral (Smooth)</td>
+          <td>Involuntary</td>
+          <td>No</td>
+          <td>Spindle</td>
+          <td>Single nucleus</td>
+          <td>Walls of organs</td>
+        </tr>
+        <tr>
+          <td>❤️ Cardiac</td>
+          <td>Involuntary</td>
+          <td>Yes</td>
+          <td>Branched</td>
+          <td>Single nucleus</td>
+          <td>Only in heart</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.2.1 Structure of Skeletal Muscle</h2>
+    <p>Skeletal muscle → muscle bundles → muscle fibres → myofibrils</p>
+    <p>Each fibre = cylindrical, multinucleated, enclosed by sarcolemma</p>
+    <p>Cytoplasm = Sarcoplasm, contains:</p>
+    <ul>
+      <li>✅ Myofibrils (contractile)</li>
+      <li>✅ Mitochondria</li>
+      <li>✅ Sarcoplasmic reticulum (stores Ca²⁺)</li>
+    </ul>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.3 Skeletal Muscle: Contractile Proteins</h2>
+    <p>🔬 Key Proteins:</p>
+    <ol>
+      <li>Actin (thin filament)
+        <ul>
+          <li>F-actin (filamentous), Troponin, Tropomyosin</li>
+          <li>Troponin binds Ca²⁺</li>
+          <li>Tropomyosin covers binding sites</li>
+        </ul>
+      </li>
+      <li>Myosin (thick filament)
+        <ul>
+          <li>Has a globular head with ATPase activity</li>
+          <li>Forms cross-bridge with actin</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.4 Mechanism of Muscle Contraction</h2>
+    <p>🧠 Sliding Filament Theory (by Huxley & Niedergerke, 1954)</p>
+    <p>🧾 Steps:</p>
+    <ol>
+      <li>Motor neuron releases acetylcholine → action potential on sarcolemma</li>
+      <li>Ca²⁺ released from sarcoplasmic reticulum</li>
+      <li>Ca²⁺ binds troponin, exposes actin’s binding site</li>
+      <li>Myosin head binds to actin → forms cross-bridge</li>
+      <li>ATP is hydrolyzed → myosin head bends → actin slides inward → contraction</li>
+      <li>Ca²⁺ reabsorbed → tropomyosin covers site again → relaxation</li>
+    </ol>
+    <p>⚠️ A-band remains same, I-band shortens, H-zone disappears, sarcomere shortens</p>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.4.1 Muscle Fatigue</h2>
+    <p>Occurs due to:</p>
+    <ul>
+      <li>• ATP depletion</li>
+      <li>• Accumulation of lactic acid (anaerobic respiration)</li>
+    </ul>
+    <p>Muscle temporarily loses ability to contract</p>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.4.2 Red and White Muscle Fibres</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>🔴 Red Muscle Fibres</th>
+          <th>⚪ White Muscle Fibres</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Myoglobin</td>
+          <td>High</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Mitochondria</td>
+          <td>Many</td>
+          <td>Few</td>
+        </tr>
+        <tr>
+          <td>Contraction</td>
+          <td>Slow, sustained</td>
+          <td>Fast, brief</td>
+        </tr>
+        <tr>
+          <td>Fatigue</td>
+          <td>Resistant</td>
+          <td>Fatigue quickly</td>
+        </tr>
+        <tr>
+          <td>Example</td>
+          <td>Postural muscles (back)</td>
+          <td>Eye, hand muscles</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.5 Skeletal System</h2>
+    <p>Provides support, shape, protection, locomotion</p>
+    <p>Made up of bones + cartilages</p>
+    <p>Total bones in adult: 206</p>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.5.1 Axial Skeleton (80 bones)</h2>
+    <p>Includes:</p>
+    <ol>
+      <li>Skull (22 bones) – 8 cranial, 14 facial</li>
+      <li>Vertebral Column (26 vertebrae)
+        <ul>
+          <li>Cervical (7)</li>
+          <li>Thoracic (12)</li>
+          <li>Lumbar (5)</li>
+          <li>Sacral (1 fused)</li>
+          <li>Coccygeal (1 fused)</li>
+        </ul>
+      </li>
+      <li>Sternum – Breastbone</li>
+      <li>Ribs (12 pairs)
+        <ul>
+          <li>True ribs (1–7)</li>
+          <li>False ribs (8–10)</li>
+          <li>Floating ribs (11–12)</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.5.2 Appendicular Skeleton (126 bones)</h2>
+    <p>Includes:</p>
+    <ul>
+      <li>Limb Bones:
+        <ul>
+          <li>Forelimbs (arms) – 30 × 2</li>
+          <li>Hindlimbs (legs) – 30 × 2</li>
+        </ul>
+      </li>
+      <li>Girdles:
+        <ul>
+          <li>Pectoral Girdle (2 clavicles + 2 scapulae)</li>
+          <li>Pelvic Girdle (2 hip bones – ilium, ischium, pubis fused)</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="note">
+    <h2>🔹 7.6 Joints</h2>
+    <p>A joint is a junction between two or more bones.</p>
+    <p>Types of Joints:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Mobility</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🔗 Fibrous</td>
+          <td>Immovable</td>
+          <td>Skull sutures</td>
+        </tr>
+        <tr>
+          <td>📏 Cartilaginous</td>
+          <td>Slightly movable</td>
+          <td>Intervertebral discs</td>
+        </tr>
+        <tr>
+          <td>⚙️ Synovial</td>
+          <td>Freely movable</td>
+          <td>Knee, shoulder</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="note">
+    <h2>🔹 Types of Synovial Joints</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>⚽ Ball & Socket</td>
+          <td>Shoulder, Hip</td>
+        </tr>
+        <tr>
+          <td>🧲 Hinge</td>
+          <td>Elbow, Knee</td>
+        </tr>
+        <tr>
+          <td>🔄 Pivot</td>
+          <td>Atlas-Axis (neck)</td>
+        </tr>
+        <tr>
+          <td>📐 Gliding</td>
+          <td>Between carpals</td>
+        </tr>
+        <tr>
+          <td>👍 Saddle</td>
+          <td>Thumb joint (carpo-metacarpal)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="note">
+    <h2>🔹 Common Muscular & Skeletal Disorders</h2>
+    <ol>
+      <li>Myasthenia Gravis
+        <ul>
+          <li>Autoimmune</li>
+          <li>Causes weakness in skeletal muscles</li>
+        </ul>
+      </li>
+      <li>Muscular Dystrophy
+        <ul>
+          <li>Genetic disorder</li>
+          <li>Progressive degeneration of muscles</li>
+        </ul>
+      </li>
+      <li>Arthritis
+        <ul>
+          <li>Inflammation of joints</li>
+          <li>Pain, swelling, stiffness</li>
+        </ul>
+      </li>
+      <li>Osteoporosis
+        <ul>
+          <li>Loss of bone density</li>
+          <li>Common in elderly, post-menopausal women</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="note">
+    <h2>📚 Summary – NCERT </h2>
+    <ol>
+      <li>Movement is a vital feature of living organisms.</li>
+      <li>Locomotion involves a change in location using muscles.</li>
+      <li>Muscles are of 3 types: skeletal, smooth, and cardiac.</li>
+      <li>Skeletal muscles have myofibrils made of actin and myosin.</li>
+      <li>Muscle contraction follows the sliding filament theory.</li>
+      <li>Red and white fibres differ in endurance and speed.</li>
+      <li>The skeletal system provides support and protection.</li>
+      <li>Axial skeleton includes skull, ribs, vertebral column.</li>
+      <li>Appendicular skeleton includes limbs and girdles.</li>
+      <li>Joints are classified as fibrous, cartilaginous, and synovial.</li>
+      <li>Common disorders include arthritis, osteoporosis, myasthenia gravis, etc.</li>
+    </ol>
+  </section>
+
+</main>
+<footer role="contentinfo">
+  &copy; 2024 Varad's Notes Hub
+</footer>
+</body>
+            </html>
+            
