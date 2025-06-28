@@ -69,12 +69,12 @@
       user-select: text;
     }
     section.note {
-      margin-bottom: 2rem;
-      border-left: 4px solid #2563eb;
-      padding-left: 1rem;
-      background: #f9fafb;
-      border-radius: 0.5rem;
-      padding: 1rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--highlight);
+  padding-left: 1rem;
+  background: var(--card); /* updated */
+  border-radius: 0.5rem;
+  padding: 1rem;
     }
     h2 {
       font-size: 1.5rem;
@@ -103,10 +103,18 @@
       border-top: 1px solid #e5e7eb;
       margin-top: 6rem;
     }
-    :root {
+   :root {
   --bg: #ffffff;
   --text: #1f2937;
   --highlight: #2563eb;
+  --card: #f9fafb; /* light mode card */
+}
+
+[data-theme="dark"] {
+  --bg: #1f2937;
+  --text: #f9fafb;
+  --highlight: #3b82f6;
+  --card: #273549; /* dark mode card */
 }
 
 [data-theme="dark"] {
