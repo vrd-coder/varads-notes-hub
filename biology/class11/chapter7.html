@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -103,6 +103,37 @@
       border-top: 1px solid #e5e7eb;
       margin-top: 6rem;
     }
+    :root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --highlight: #2563eb;
+}
+
+[data-theme="dark"] {
+  --bg: #1f2937;
+  --text: #f9fafb;
+  --highlight: #3b82f6;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--highlight);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 999;
+}
   </style>
 </head>
 <body>
